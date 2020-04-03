@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Console Tricks!</title>
 </head>
+
 <body>
 
   <p onClick="makeGreen()">×BREAK×DOWN×</p>
@@ -18,29 +20,72 @@
     }
 
     // Regular
+    console.log('normal log');
 
     // Interpolated
+    console.log('this is %s %s text', 'interpolated', "blah, blah");
 
     // Styled
+    console.log('%c styled text', 'font-size:30px; color:red; background-color: blue');
 
     // warning!
+    console.warn('hold up!');
 
     // Error :|
+    console.error('man wtf?');
 
     // Info
+    console.info('some fun fact');
+    console.info('Crocodiles eat 3-4 people per year');
+    // not blue, idk why
 
     // Testing
+    console.assert(false, 'it is wrong');
+    // appears as an error while the condition is false
 
     // clearing
+    console.clear();
 
     // Viewing DOM Elements
+    const p = document.querySelector('p')
+    console.dir(p);
+    // dropdown with info about the DOM element
 
     // Grouping together
+    dogs.forEach(dog => {
+      console.group(dog.name);
+      console.log(`This dog name is ${dog.name}.`);
+      console.log(`${dog.name} is ${dog.age} years old.`);
+      console.groupEnd(dog.name)
+    })
 
     // counting
+    console.count('Mat')
+    console.count('Gra')
+    console.count('Gra')
+    console.count('Gra')
+    console.count('Mat')
+    console.count('Mat')
+    console.count('Gra')
+    console.count('Mat')
+    console.count('Mat')
+    console.count('Gra')
+    console.count('Gra')
+    console.count('Gra')
+    console.count('Gra')
+    console.count('Mat')
 
     // timing
+    console.time('fetching data');
+    fetch('https://api.github.com/users/wesbos')
+      .then(data => data.json())
+      .then(data => {
+        console.timeEnd('fetching data');
+        console.log(data);
+      })
+
 
   </script>
 </body>
+
 </html>
